@@ -3,10 +3,12 @@
 
 <head>
     <title>Unit Converter</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <input type="text" id="inputValue">
+   <div class="container">
+       <input type="text" id="inputValue">
     <select id="inUnit">
        <option value="1">meter</option>
         <option value="0.001">millimeter</option>
@@ -30,7 +32,10 @@
         <option value="0.9144">yard</option>
         <option value="1609.344">mile</option>
     </select>
-    <p id="result"></p>
+    <p>Wynik: <span id="result"></span></p>
+       
+   </div>
+    
     <script type="text/javascript" src="app.js"></script>
 </body>
 

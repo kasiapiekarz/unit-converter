@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const outUnit = document.getElementById("outUnit");
     const result = document.getElementById("result");
     
+    
     input.addEventListener("input", changeInput);
     inUnit.addEventListener("change", changeInput);
     outUnit.addEventListener("change", changeInput);
@@ -12,17 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isValid(input.value)) {
             showResult();
         }
+        else {
+            isError();
+        }
     }
 
     function showResult() {
         result.textContent = convertUnit();
     }
 
+    function isError() {
+        result.textContent = "Wrong format. Input must be a number";
+    }
+
     function convertUnit() {
         return input.value * inUnit.value / outUnit.value;
     }
 
-    function isValid(value) {
-        return !Number.isNaN(value);
+    function isValid(num) {
+        return !Number.isNaN(Number(num));
     }
 });
